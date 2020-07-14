@@ -105,7 +105,7 @@ const Block = ({ city }) => {
         fetch();
     }, []);
     const temperature = Math.round(data.main.temp - 273.15);
-    const { colors, name, icon } = ConvertSkies(data.weather[0].description, temperature);
+    const { colors, icon } = ConvertSkies(data.weather[0].description, temperature);
     const url = `/result?cityName=${city}`;
     if (isLoading) return <div>Loading...</div>;
     return (

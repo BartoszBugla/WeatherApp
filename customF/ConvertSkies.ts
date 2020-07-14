@@ -42,7 +42,7 @@ const types = [
         colors: ["#5BCCFC", "#003F82"],
     },
 ];
-export default function ConvertSkies(sky: string, temp: number, time: { cur: 1; set: 1; rise: 1 }) {
+export default function ConvertSkies(sky: string, temp: number, time = { cur: 1, set: 1, rise: 1 }) {
     let day = true;
     if (time != undefined) {
         if (time.cur > time.set || time.cur < time.rise) day = false;
