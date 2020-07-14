@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Router from "next/router";
 import styled from "styled-components";
 import SubmitButton from "./SubmitButton";
 import FormItem from "./formItem";
 import Menu from "./Menu";
+import Burger from "./Burger";
+
 const Container = styled.div`
     width: 100%;
     display: flex;
-    flex-direction: row;
+
     align-items: center;
     padding-bottom: 20px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
@@ -18,7 +20,7 @@ const Container = styled.div`
         text-align: center;
     }
     * {
-        margin: 10px 5px;
+        margin: 3px 5px;
     }
     form {
         display: flex;
@@ -26,7 +28,21 @@ const Container = styled.div`
         align-items: center;
 
         * {
-            margin: 0 5px;
+            margin: 2px 10px;
+        }
+    }
+    @media (max-width: 800px) {
+        flex-direction: column;
+        * {
+            margin: 2px 0px;
+        }
+        header {
+            font-size: 0.8rem;
+        }
+    }
+    @media (max-width: 800px) {
+        header {
+            font-size: 0.6rem;
         }
     }
 `;
@@ -41,9 +57,11 @@ const Search = () => {
             query: { cityName: search },
         });
     };
+
     const handleChange = (e) => {
         setSearch(e.target.value);
     };
+
     return (
         <Container>
             <header>
@@ -55,6 +73,7 @@ const Search = () => {
 
                 <SubmitButton>Search</SubmitButton>
             </form>
+            <Burger />
         </Container>
     );
 };

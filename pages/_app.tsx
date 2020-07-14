@@ -8,8 +8,6 @@ const MyApp = ({ Component, pageProps }) => {
 
 MyApp.getInitialProps = async ({ Component, ctx }) => {
     const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
-
-    console.log("anything");
     //Anything returned here can be access by the client
     return { pageProps };
 };
