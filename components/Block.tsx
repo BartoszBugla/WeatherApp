@@ -92,7 +92,7 @@ const Block = ({ city }) => {
             return loc.DisplayPosition;
         };
         const fetchData = async (item) => {
-            const url2 = `http://api.openweathermap.org/data/2.5/weather?lat=${item.Latitude}&lon=${item.Longitude}&appid=${apikey2}`;
+            const url2 = `https://api.openweathermap.org/data/2.5/weather?lat=${item.Latitude}&lon=${item.Longitude}&appid=${apikey2}`;
             const fetchedData = await axios(url2);
             return fetchedData.data;
         };
